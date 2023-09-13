@@ -6,10 +6,10 @@
 
 ### on Andriod device:
 
-#### exp://u.expo.dev/update/30f56777-e148-49dd-90ff-443fb70b9802
+#### exp://u.expo.dev/update/d8f5c238-1ec3-47e4-974d-d4b1352c234e
 
 ### on iOS device:
 
-#### exp://u.expo.dev/update/61dc6b5f-6b98-4588-8db5-d89cf528688b
+#### exp://u.expo.dev/update/79992fe2-f4cd-4043-97fd-5139905ab067
 # Lipeunim 🚀🚀
 ### react-native-calculator
