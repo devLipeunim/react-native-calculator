@@ -2,7 +2,7 @@
 
 - Download "Expo go" on your device
 
-## 🚀 Copy the QR code below and paste the url in your "Expo go App" to see this project
+## 🚀 Copy the link below and paste the url in your "Expo go App" to see this project
 
 ### on Andriod device:
 
