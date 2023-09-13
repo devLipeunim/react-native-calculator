@@ -27,10 +27,11 @@ const styles = StyleSheet.create({
 });
 
 const Home = () => {
-  const [input, setInput] = useState(0);
+  const [input, setInput] = useState("");
 
   const calculate = (number) => {
-    setInput(prevInput => prevInput + number);
+    setInput(
+      prevInput => prevInput + number);
   }
 
   const Result = () => {
@@ -50,7 +51,7 @@ const Home = () => {
     });
   };
   const Clear = () => {
-    setInput(0);
+    setInput("");
   }
   
   const del = () => {
@@ -69,7 +70,7 @@ const Home = () => {
       <SafeAreaView>
         <StatusBar
           barStyle="light-content"
-          backgroundColor="#202020"
+          backgroundColor="#f09a36"
           animated={true}
         />
 
@@ -77,7 +78,7 @@ const Home = () => {
           options={{
             headerStyle: { backgroundColor: "#f09a36" },
             headerShadowVisible: false,
-            headerLeft: () => <Text style={styles.headerLeft}>Lipeunim</Text>,
+            headerLeft: () => <Text style={styles.headerLeft}>Lipeunim&gt;&gt;&gt;</Text>,
             headerRight: () => <ScreenHeaderPic dimension="100%" />,
             headerTitle: "",
           }}
@@ -105,9 +106,9 @@ const Home = () => {
         </Row>
 
         <Row>
-          <Button text="7" onPress={() => calculate(7)} />
-          <Button text="8" onPress={() => calculate(8)} />
-          <Button text="9" onPress={() => calculate(9)} />
+          <Button text="7" onPress={() => calculate("7")} />
+          <Button text="8" onPress={() => calculate("8")} />
+          <Button text="9" onPress={() => calculate("9")} />
           <Button
             text="x"
             theme="accent"
@@ -116,9 +117,9 @@ const Home = () => {
         </Row>
 
         <Row>
-          <Button text="4" onPress={() => calculate(4)} />
-          <Button text="5" onPress={() => calculate(5)} />
-          <Button text="6" onPress={() => calculate(6)} />
+          <Button text="4" onPress={() => calculate("4")} />
+          <Button text="5" onPress={() => calculate("5")} />
+          <Button text="6" onPress={() => calculate("6")} />
           <Button
             text="-"
             theme="accent"
@@ -127,9 +128,9 @@ const Home = () => {
         </Row>
 
         <Row>
-          <Button text="1" onPress={() => calculate(1)} />
-          <Button text="2" onPress={() => calculate(2)} />
-          <Button text="3" onPress={() => calculate(3)} />
+          <Button text="1" onPress={() => calculate("1")} />
+          <Button text="2" onPress={() => calculate("2")} />
+          <Button text="3" onPress={() => calculate("3")} />
           <Button
             text="+"
             theme="accent"
