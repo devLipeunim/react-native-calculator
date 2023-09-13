@@ -20,10 +20,10 @@ export const handleEqual = (state) => {
   const current = parseFloat(currentValue);
   const previous = parseFloat(previousValue);
   console.log(current, previous)
-  // const resetState = {
-  //   operator: null,
-  //   previousValue: null,
-  // };
+  const resetState = {
+    operator: null,
+    previousValue: null,
+  };
 
   if (operator === "/") {
     return {
