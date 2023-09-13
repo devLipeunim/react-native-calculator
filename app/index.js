@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View, StatusBar, SafeAreaView } from "react-native";
 import { Stack } from "expo-router";
 import Row from "../components/Row";
-import ScreenHeaderPic from "../components/ScreenHeaderPic"
+import ScreenHeaderPic from "../components/ScreenHeaderPic";
 import Button from "../components/Button";
-import calculator, { initialState } from "../util/calculator";
 
 const styles = StyleSheet.create({
   container: {
@@ -20,108 +19,131 @@ const styles = StyleSheet.create({
     marginRight: 20,
     marginBottom: 10,
   },
-  headerLeft:{
+  headerLeft: {
     color: "#fff",
     fontSize: 22,
     fontFamily: "DMBold",
-  }
+  },
 });
 
 const Home = () => {
-  const [state, setState] = useState(initialState);
+  const [input, setInput] = useState(0);
 
-  const handleTap = (type, value) => {
-    console.log("State before:", state);
-    const newState = calculator(type, value, state);
-  console.log("New State:", newState);
-    setState(newState);
+  const calculate = (number) => {
+    setInput(prevInput => prevInput + number);
+  }
+
+  const Result = () => {
+    try {
+      setInput(eval(input).toString());
+    } catch (err) {
+      alert("Enter a valid number");
+    }
+  }
+
+  const percentage = () => {
+    setInput(prevInput => (eval(prevInput) / 100).toString());
   };
+  const posneg = () => {
+    setInput(prevInput => {
+      return (parseFloat(prevInput) * -1).toString();
+    });
+  };
+  const Clear = () => {
+    setInput(0);
+  }
+  
+  const del = () => {
+    setInput(prevInput => prevInput.slice(0, -1));
+  }
+
 
   return (
     <View style={styles.container}>
       <SafeAreaView>
-        <StatusBar barStyle="light-content" backgroundColor="#202020" animated={true} />
+        <StatusBar
+          barStyle="light-content"
+          backgroundColor="#202020"
+          animated={true}
+        />
 
         <Stack.Screen
           options={{
             headerStyle: { backgroundColor: "#f09a36" },
             headerShadowVisible: false,
-            headerLeft: () => (
-              <Text style={styles.headerLeft}>Lipeunim</Text>
-            ),
-            headerRight: () => (
-              <ScreenHeaderPic dimension="100%" />
-            ),
+            headerLeft: () => <Text style={styles.headerLeft}>Lipeunim</Text>,
+            headerRight: () => <ScreenHeaderPic dimension="100%" />,
             headerTitle: "",
           }}
         />
         <Text style={styles.value}>
-          {parseFloat(state.currentValue).toLocaleString()}
+        {input}
         </Text>
         <Row>
-          <Button
-            text="C"
-            theme="secondary"
-            onPress={() => handleTap("clear")}
-          />
+          <Button text="C" theme="secondary" onPress={() => Clear()} />
           <Button
             text="+/-"
             theme="secondary"
-            onPress={() => handleTap("posneg")}
+            onPress={() => posneg()}
           />
           <Button
             text="%"
             theme="secondary"
-            onPress={() => handleTap("percentage")}
+            onPress={() => percentage()}
           />
           <Button
-            text="/"
-            theme="accent"
-            onPress={() => handleTap("operator", "/")}
+            text="Del"
+            theme="secondary"
+            onPress={() => del()}
           />
         </Row>
 
         <Row>
-          <Button text="7" onPress={() => handleTap("number", 7)} />
-          <Button text="8" onPress={() => handleTap("number", 8)} />
-          <Button text="9" onPress={() => handleTap("number", 9)} />
+          <Button text="7" onPress={() => calculate(7)} />
+          <Button text="8" onPress={() => calculate(8)} />
+          <Button text="9" onPress={() => calculate(9)} />
           <Button
             text="x"
             theme="accent"
-            onPress={() => handleTap("operator", "*")}
+            onPress={() => calculate('*')}
           />
         </Row>
 
         <Row>
-          <Button text="4" onPress={() => handleTap("number", 4)} />
-          <Button text="5" onPress={() => handleTap("number", 5)} />
-          <Button text="6" onPress={() => handleTap("number", 6)} />
+          <Button text="4" onPress={() => calculate(4)} />
+          <Button text="5" onPress={() => calculate(5)} />
+          <Button text="6" onPress={() => calculate(6)} />
           <Button
             text="-"
             theme="accent"
-            onPress={() => handleTap("operator", "-")}
+            onPress={() => calculate("-")}
           />
         </Row>
 
         <Row>
-          <Button text="1" onPress={() => handleTap("number", 1)} />
-          <Button text="2" onPress={() => handleTap("number", 2)} />
-          <Button text="3" onPress={() => handleTap("number", 3)} />
+          <Button text="1" onPress={() => calculate(1)} />
+          <Button text="2" onPress={() => calculate(2)} />
+          <Button text="3" onPress={() => calculate(3)} />
           <Button
             text="+"
             theme="accent"
-            onPress={() => handleTap("operator", "+")}
+            onPress={() => calculate("+")}
           />
         </Row>
 
         <Row>
           <Button
             text="0"
-            size="double"
-            onPress={() => handleTap("number", 0)}
+            // size="double"
+            onPress={() => calculate(0)}
           />
-          <Button text="." onPress={() => handleTap("number", ".")} />
-          <Button text="=" theme="accent" onPress={() => handleTap("equal")} />
+          <Button text="." onPress={() => calculate(".")} />
+          <Button
+            text="/"
+            theme="accent"
+            onPress={() => calculate("/")}
+          />
+          <Button text="=" theme="accent" onPress={() => Result()} />
         </Row>
       </SafeAreaView>
     </View>

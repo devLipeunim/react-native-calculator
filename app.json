@@ -35,6 +35,12 @@
         "projectId": "fa534c31-a2b5-4440-8f73-c90fc9a6e8cb"
       }
     },
-    "owner": "devlipeunim"
+    "owner": "devlipeunim",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/fa534c31-a2b5-4440-8f73-c90fc9a6e8cb"
+    }
   }
 }
