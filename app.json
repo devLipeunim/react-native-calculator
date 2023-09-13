@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "scheme": "acme",
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router"
+    ],
+    "name": "Calculator",
+    "slug": "calculator",
+    "description": "This is my second React-Native App",
+    "orientation": "portrait",
+    "privacy": "public",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "fa534c31-a2b5-4440-8f73-c90fc9a6e8cb"
+      }
+    },
+    "owner": "devlipeunim"
+  }
+}
