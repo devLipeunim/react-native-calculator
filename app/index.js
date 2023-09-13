@@ -54,7 +54,13 @@ const Home = () => {
   }
   
   const del = () => {
-    setInput(prevInput => prevInput.slice(0, -1));
+    setInput(prevInput => {
+      if (prevInput.length > 1) {
+        return prevInput.slice(0, -1);
+      } else {
+        return 0;
+      }
+    });
   }
 
 
