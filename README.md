@@ -2,14 +2,14 @@
 
 - Download "Expo go" on your device
 
-## 🚀 Copy the QR code below and paste the url in your "Expo go App" to see this project
+## 🚀 Copy the link below and paste the url in your "Expo go App" to see this project
 
 ### on Andriod device:
 
-#### exp://u.expo.dev/update/30f56777-e148-49dd-90ff-443fb70b9802
+#### exp://u.expo.dev/update/eef620c6-ddaa-43dd-8119-d45254d564b2
 
 ### on iOS device:
 
-#### exp://u.expo.dev/update/61dc6b5f-6b98-4588-8db5-d89cf528688b
+#### exp://u.expo.dev/update/72b820d9-b471-4acc-b1a3-131c74e711df
 # Lipeunim 🚀🚀
 ### react-native-calculator
